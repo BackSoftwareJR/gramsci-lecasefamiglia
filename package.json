@@ -1,0 +1,8 @@
+{
+  "name": "casa-famiglia-gramsci",
+  "private": true,
+  "description": "Static website for Casa Famiglia Gramsci",
+  "scripts": {
+    "test": "node scripts/validate-site.js"
+  }
+}
