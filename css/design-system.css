@@ -1,0 +1,114 @@
+/**
+ * Casa Famiglia Gramsci — Design System
+ * Valle di Susa green · warm cream · terracotta accent
+ */
+:root {
+  /* Primary — Valle di Susa green */
+  --color-primary-50: #eef4f0;
+  --color-primary-100: #dce9e1;
+  --color-primary-200: #b9d3c3;
+  --color-primary-300: #96bda5;
+  --color-primary-400: #5f9478;
+  --color-primary-500: #2d5a3d;
+  --color-primary-600: #244a31;
+  --color-primary-700: #24412e;
+  --color-primary-800: #192c1f;
+  --color-primary-900: #0e1710;
+
+  /* Secondary — warm cream */
+  --color-secondary-50: #fdfaf5;
+  --color-secondary-100: #f5edd8;
+  --color-secondary-200: #ebdbb1;
+
+  /* Accent — terracotta */
+  --color-accent-50: #faf0e8;
+  --color-accent-100: #f5e1d1;
+  --color-accent-400: #d18747;
+  --color-accent-500: #c17a3a;
+  --color-accent-600: #9a6230;
+
+  /* Neutral */
+  --color-neutral-200: #d9d6d3;
+  --color-neutral-400: #8a8682;
+  --color-neutral-500: #6b6b6b;
+  --color-neutral-600: #4a4a4a;
+  --color-neutral-700: #2c2c2c;
+
+  /* Semantic aliases (backward compat) */
+  --color-primary: #2d5a3d;
+  --color-primary-light: #4a7a5a;
+  --color-secondary: #f5edd8;
+  --color-accent: #c17a3a;
+  --color-text: #2c2c2c;
+  --color-text-light: #6b6b6b;
+  --color-text-muted: #6b6b6b;
+  --color-text-inverse: #ffffff;
+  --color-bg: #fdfaf5;
+  --color-bg-alt: #f5edd8;
+  --color-white: #ffffff;
+  --color-border: #d9d6d3;
+  --color-whatsapp: #25d366;
+
+  --font-heading: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;
+  --tracking-wide: 0.04em;
+  --tracking-wider: 0.08em;
+
+  /* Spacing — numbered + legacy names */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 20px rgba(45, 90, 61, 0.08);
+  --shadow-lg: 0 8px 32px rgba(45, 90, 61, 0.12);
+  --shadow-xl: 0 12px 40px rgba(14, 23, 16, 0.14);
+
+  --transition-fast: 150ms ease;
+  --transition-base: 300ms ease;
+  --transition-slow: 600ms ease;
+
+  --container-max: 75rem;
+  --header-height: 4.5rem;
+  --cookie-banner-height: 5.5rem;
+
+  --z-sticky: 100;
+  --z-fixed: 200;
+  --z-toast: 300;
+
+  --focus-ring: 0 0 0 3px rgba(193, 122, 58, 0.35);
+}
