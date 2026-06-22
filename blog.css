@@ -661,3 +661,15 @@
   background: var(--color-accent-100);
   color: var(--color-accent-800);
 }
+
+/* Blog index CTA */
+.blog-index-cta__buttons {
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 767px) {
+  .blog-index-cta__buttons .btn {
+    width: 100%;
+  }
+}

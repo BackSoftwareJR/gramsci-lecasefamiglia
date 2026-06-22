@@ -4,8 +4,7 @@ import json
 import os
 import re
 import html as html_lib
-from urllib.parse import quote
-from urllib.parse import quote
+from urllib.parse import quote, unquote
 
 from blog_articles_data import ARTICLES, ARTICLE_INDEX, OG_IMAGE, IMG_BASE
 
@@ -154,7 +153,11 @@ def sections_to_body(article):
     promos = {p.get("after_section", -1): p.get("type", "visita") for p in article.get("promos", [])}
 
     if article.get("intro"):
-        parts.append(f'<p class="blog-dropcap">{article["intro"].strip()}</p>')
+        intro = article["intro"].strip()
+        if intro.startswith("<p>"):
+            parts.append(intro.replace("<p>", '<p class="blog-dropcap">', 1))
+        else:
+            parts.append(f'<p class="blog-dropcap">{intro}</p>')
 
     for i, sec in enumerate(article["sections"]):
         parts.append(f'<h2 id="{sec["id"]}">{html_lib.escape(sec["title"])}</h2>\n{sec["body"]}')
@@ -182,7 +185,8 @@ def build_html(article):
     hero = article.get("hero", "Sala da Pranzo + persone 1.avif")
     hero_alt = article.get("hero_alt", f"Casa famiglia anziani Coazze — {article['title']}")
     hero_caption = article.get("hero_caption", "Casa Famiglia Gramsci, Piazza Gramsci 17 — Coazze, Valle di Susa")
-    wa_text = article.get("wa_text", "Ciao, ho letto il vostro articolo e vorrei informazioni sulla casa famiglia")
+    wa_text = unquote(article.get("wa_text", "Ciao, ho letto il vostro articolo e vorrei informazioni sulla casa famiglia"))
+    author = article.get("author", "Casa Famiglia Gramsci")
     tags = article.get("tags", [])
     sidebar = sidebar_related(article.get("related", [])) + sidebar_cta()
 
@@ -205,7 +209,7 @@ def build_html(article):
   <meta property="og:image" content="{OG_IMAGE}">
   <meta property="article:published_time" content="2026-06-22T09:00:00+02:00">
   <meta property="article:modified_time" content="2026-06-22T09:00:00+02:00">
-  <meta property="article:author" content="Redazione Casa Famiglia Gramsci">
+  <meta property="article:author" content="{html_lib.escape(author)}">
   <meta property="article:section" content="{html_lib.escape(article['category'])}">
 {article_tag_metas(tags)}
   <meta name="theme-color" content="#2D5A3D">
@@ -228,7 +232,7 @@ def build_html(article):
     "image": {json_str(OG_IMAGE)},
     "datePublished": "2026-06-22T09:00:00+02:00",
     "dateModified": "2026-06-22T09:00:00+02:00",
-    "author": {{"@type": "Organization", "name": "Redazione Casa Famiglia Gramsci", "url": "{SITE}/"}},
+    "author": {{"@type": "Organization", "name": {json_str(author)}, "url": "{SITE}/"}},
     "publisher": {{"@type": "Organization", "name": "Casa Famiglia Gramsci", "url": "{SITE}/"}},
     "mainEntityOfPage": {{"@type": "WebPage", "@id": "{SITE}/blog/{slug}/"}},
     "inLanguage": "it-IT",
@@ -257,7 +261,7 @@ def build_html(article):
         <p class="blog-article__meta">
           <time datetime="2026-06-22">22 giugno 2026</time>
           · {html_lib.escape(article['reading'])} di lettura
-          · <span class="blog-article__author">Redazione Casa Famiglia Gramsci</span>
+          · <span class="blog-article__author">{html_lib.escape(author)}</span>
         </p>
         {tags_html(tags)}
       </header>
@@ -313,7 +317,7 @@ def build_md(article):
         f'metaDescription: "{article["meta_desc"]}"',
         "date: 2026-06-22",
         "dateModified: 2026-06-22",
-        "author: Redazione Casa Famiglia Gramsci",
+        f'author: {article.get("author", "Casa Famiglia Gramsci")}',
         f'category: {article["category"]}',
         f'readingTime: {article["reading"]}',
         f'keywords: {article["keywords"]}',
@@ -459,13 +463,21 @@ def build_blog_index():
         </div>
       </div>
     </section>
-    <section class="cta-band">
+    <section class="cta-band" aria-labelledby="blog-cta-heading">
       <div class="container">
-        <h2>Hai altre domande?</h2>
-        <p>Parliamone — siamo a Coazze, in Valle di Susa.</p>
-        <div class="btn-group" style="justify-content: center;">
-          <a href="/contatti/" class="btn btn--accent btn--lg">Ti aiutiamo noi</a>
-          <a href="/servizi/" class="btn btn--secondary btn--lg">I nostri servizi</a>
+        <h2 id="blog-cta-heading">Hai altre domande?</h2>
+        <p>Parliamone — siamo a Coazze, in Valle di Susa. Visita gratuita, senza impegno.</p>
+        <div class="btn-group blog-index-cta__buttons">
+          <a href="tel:+393762031211" class="btn btn--accent btn--lg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" width="20" height="20" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Chiama — +39 376 203 1211
+          </a>
+          <a href="https://wa.me/393762031211?text={quote('Ciao, sto cercando informazioni sulla casa famiglia per il mio caro')}" class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener noreferrer">
+            <img src="../icons/whatsapp.svg" alt="" width="20" height="20" aria-hidden="true">
+            WhatsApp
+          </a>
+          <a href="/contatti/" class="btn btn--secondary btn--lg">Prenota una visita</a>
+          <a href="/servizi/" class="btn btn--ghost btn--lg">I nostri servizi</a>
         </div>
       </div>
     </section>

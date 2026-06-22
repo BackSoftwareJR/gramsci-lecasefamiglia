@@ -1,8 +1,8 @@
 # Casa Famiglia Gramsci — Progress Tracker
 
-> Last updated: 2026-06-22 — Blog magazine overhaul completato
+> Last updated: 2026-06-22 — Blog overhaul completo (10 articoli + index)
 
-## Stato generale: ~90% (blog magazine completato)
+## Stato generale: ~92%
 
 | Area | Status |
 |------|--------|
@@ -11,32 +11,32 @@
 | Visual polish pass (SVG icons, nav, cookie banner, hero) | Completata |
 | Pagine dedicate (galleria, storia, requisiti) | ✅ Create |
 | Landing geo (5 pagine) | ✅ Create |
-| Blog 10 articoli | ✅ Espansi 1.500+ parole, layout magazine, sidebar |
+| Blog 10 articoli (1.200–1.800 parole, TOC, schema, CTA) | ✅ Completato |
+| Blog index (hero, filtri categoria, SEO intro) | ✅ Completato |
+| blog.css (layout magazine, sidebar, prose) | ✅ Completato |
 | Sitemap (29 URL) | ✅ Aggiornata |
 | Footer espanso | ✅ Zone + scopri + blog |
 
-## Nuove pagine (SEO landing)
+## Blog overhaul (2026-06-22)
 
-- `/galleria/` — galleria masonry completa
-- `/storia/` — narrativa brand
-- `/requisiti-autosufficienza/` — requisiti ammissione
-- `/casa-famiglia-coazze/`
-- `/casa-famiglia-giaveno/`
-- `/casa-famiglia-pinerolo/`
-- `/casa-famiglia-valle-di-susa/`
-- `/casa-famiglia-avigliana/`
+- 10 articoli espansi con contenuto unico in italiano (1.200–1.300+ parole ciascuno)
+- TOC con anchor H2, hero image, sidebar articoli correlati
+- Schema Article + BreadcrumbList, og:image, hreflang it
+- CTA finale: Chiama + WhatsApp + /contatti/
+- Generator: `scripts/build-blog-overhaul.py` + `scripts/blog_articles_data.py`
+- Sorgenti markdown: `content/blog/{slug}.md`
 
 ## Prossimo loop (vedi CONTENT-ROADMAP.md)
 
-1. ~~Espandere tutti i 10 blog a 1.200–1.800 parole + TOC + articoli correlati~~ ✅
-2. 5 nuovi articoli blog (senso di colpa, ginnastica dolce, segnali assistenza, ecc.)
-3. Landing geo: Trana, Valgioie, Susa
-4. Testimonianze reali
-5. Formspree + email info@
-6. Lighthouse audit post-deploy
+1. 5 nuovi articoli blog (Fase 2)
+2. Landing geo: Trana, Valgioie, Susa
+3. Testimonianze reali
+4. Formspree + email info@
+5. Lighthouse audit post-deploy
 
 ## File chiave
 
 - `direttive.txt` — source of truth vincolante
 - `CONTENT-ROADMAP.md` — strategia contenuti
+- `scripts/build-blog-overhaul.py` — rigenera blog HTML da dati
 - `HANDOFF.md` — deploy e task manuali

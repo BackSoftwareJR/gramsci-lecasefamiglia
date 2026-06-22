@@ -36,7 +36,22 @@ Essere trovati da figli 45–65 che cercano una soluzione per genitori autosuffi
 | `/casa-famiglia-avigliana/` | casa famiglia anziani Avigliana |
 
 ### Tier 4 — Blog (autorità + educazione)
-10 articoli — **completato**: 1.500+ parole/articolo, sidebar correlati, TOC, hero image, tag badges, promo boxes, schema Article, filtro categoria su index.
+**10 articoli pubblicati** — ogni articolo 1.200–1.800 parole, TOC, schema Article, CTA tel/WhatsApp, articoli correlati in sidebar, hero image, internal linking verso pagine core e geo.
+
+| Slug | Categoria |
+|------|-----------|
+| `casa-famiglia-vs-rsa-differenze` | Guida |
+| `scegliere-casa-famiglia-genitori` | Scelta consapevole |
+| `anziani-autosufficienti-coazze` | Territorio |
+| `valle-di-susa-vita-anziani` | Benessere |
+| `visite-familiari-casa-famiglia` | Vita in casa |
+| `costi-retta-casa-famiglia-piemonte` | Costi |
+| `inserimento-nuovo-ospite` | Accoglienza |
+| `autonomia-dignita-terza-eta` | Cura relazionale |
+| `coazze-giaveno-pinerolo-servizi` | Servizi locali |
+| `domande-figli-casa-famiglia` | FAQ |
+
+Rigenerazione: `python3 scripts/build-blog-overhaul.py`
 
 **Articoli aggiuntivi pianificati (Fase 2 blog):**
 - Senso di colpa nell'affidare un genitore
@@ -59,7 +74,7 @@ Ogni pagina → minimo 3 link interni verso: `/contatti/`, `/rette-e-ammissione/
 
 ## Prossimo loop (priorità)
 
-1. [x] Espandere tutti i 10 blog a 1.500+ parole con sidebar e articoli correlati
+1. [x] Espandere tutti i 10 blog a 1.200+ parole con TOC e articoli correlati
 2. [ ] Aggiungere 5 nuovi articoli blog (Fase 2)
 3. [ ] Landing geo: Trana, Valgioie, Torino provincia
 4. [ ] Testimonianze reali (sostituire placeholder)
@@ -70,6 +85,6 @@ Ogni pagina → minimo 3 link interni verso: `/contatti/`, `/rette-e-ammissione/
 ## Metriche target
 
 - Lighthouse: >90 tutte le categorie
-- Blog: min 1.200 parole/articolo
+- Blog: min 1.200 parole/articolo ✅
 - Landing geo: min 800 parole uniche per pagina
 - Schema: LodgingBusiness, FAQPage, Article, BreadcrumbList su ogni pagina pertinente

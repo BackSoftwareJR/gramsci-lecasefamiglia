@@ -1,31 +1,18 @@
 # Blog — Guide per famiglie
 
-Articoli pensati per figli e caregiver (45–65 anni) che stanno valutando una casa famiglia per genitori autosufficienti in Valle di Susa e Coazze.
+Articoli pensati per figli e caregiver che stanno valutando una casa famiglia per genitori autosufficienti in Valle di Susa e Coazze.
 
-## Layout magazine (FASE 6 — completata)
+## Articoli pubblicati (10)
 
-- Hero articolo in evidenza + griglia 10 card con thumbnail, categoria, data, excerpt, tag
-- Intro SEO ~150 parole
-- Filtro per categoria (JS)
-- Schema Blog + BreadcrumbList
+1. [Casa famiglia vs RSA](/blog/casa-famiglia-vs-rsa-differenze/) — Guida
+2. [Come scegliere una casa famiglia](/blog/scegliere-casa-famiglia-genitori/) — Scelta consapevole
+3. [Anziani autosufficienti a Coazze](/blog/anziani-autosufficienti-coazze/) — Territorio
+4. [Vita in Valle di Susa](/blog/valle-di-susa-vita-anziani/) — Benessere
+5. [Visite familiari](/blog/visite-familiari-casa-famiglia/) — Vita in casa
+6. [Costi e retta in Piemonte](/blog/costi-retta-casa-famiglia-piemonte/) — Costi
+7. [Inserimento nuovo ospite](/blog/inserimento-nuovo-ospite/) — Accoglienza
+8. [Autonomia e dignità](/blog/autonomia-dignita-terza-eta/) — Cura relazionale
+9. [Coazze, Giaveno, Pinerolo](/blog/coazze-giaveno-pinerolo-servizi/) — Servizi locali
+10. [Domande dei figli](/blog/domande-figli-casa-famiglia/) — FAQ
 
-## Articoli (10 — espansi 1.500+ parole)
-
-1. Casa famiglia vs RSA: le differenze che contano
-2. Come scegliere una casa famiglia per i genitori
-3. Anziani autosufficienti a Coazze: perché restare in valle
-4. Vita serena in Valle di Susa dopo i 65 anni
-5. Visite familiari in casa famiglia: restare presenti
-6. Costi e retta di una casa famiglia in Piemonte
-7. L'inserimento sereno di un nuovo ospite
-8. Autonomia e dignità in terza età: perché contano
-9. Coazze, Giaveno, Pinerolo: la nostra area servita
-10. Le domande che ogni figlio si pone sulla casa famiglia
-
-## Generazione
-
-```bash
-cd scripts && python3 build-blog-overhaul.py
-```
-
-**Hai altre domande?** [Contattaci →](/contatti/)
+**Hai altre domande?** [Contattaci](/contatti/) · +39 376 203 1211 · [WhatsApp](https://wa.me/393762031211)
