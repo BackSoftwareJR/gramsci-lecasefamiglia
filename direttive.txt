@@ -619,7 +619,7 @@ Dati da form contatti (nome, telefono, messaggio)
 Cookie tecnici e analitici (Google Analytics se presente)
 
 Dati di navigazione
-Titolare: Quercia & Gramsci S.r.l.s., Piazza Gramsci 17, Coazze (TO)
+Titolare: Gramsci S.r.l.s., Piazza Gramsci 17, Coazze (TO)
 Email DPO: info@gramsci.lecasefamiglia.it
 Base giuridica: consenso + legittimo interesse
 Aggiorna data: [DATA ODIERNA]
